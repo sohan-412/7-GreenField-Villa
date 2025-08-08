@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>7 Green field Villa - Luxurious Countryside Homestay Near Pune</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- Animate On Scroll Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Custom Styles & Font Configuration -->
@@ -23,7 +23,7 @@
         :root {
             --background: #F8F7F5;      /* Soft, warm off-white */
             --text-primary: #333333;    /* Soft, dark charcoal */
-            --primary: #224229;        /* Deep, rich forest green */
+            --primary: #224229;         /* Deep, rich forest green */
             --accent: #EAAA00;          /* Vibrant, warm marigold yellow */
             --white: #FFFFFF;
         }
@@ -67,17 +67,17 @@
             
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#gallery" class="text-gray-600 hover:text-primary transition duration-300">Gallery</a>
-                <a href="#amenities" class="text-gray-600 hover:text-primary transition duration-300">Activities</a>
-                <a href="#location" class="text-gray-600 hover:text-primary transition duration-300">Location</a>
-                <a href="#contact" class="bg-accent text-primary font-bold py-2 px-6 rounded-full shadow-md hover:bg-accent-dark hover:scale-105 transform transition duration-300">
+                <a href="#gallery-section" class="text-gray-600 hover:text-primary transition duration-300">Gallery</a>
+                <a href="#amenities-section" class="text-gray-600 hover:text-primary transition duration-300">Activities</a>
+                <a href="#location-section" class="text-gray-600 hover:text-primary transition duration-300">Location</a>
+                <a href="#contact-section" class="bg-accent text-primary font-bold py-2 px-6 rounded-full shadow-md hover:bg-accent-dark hover:scale-105 transform transition duration-300">
                     Inquire Now
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+                <button id="menu-btn" class="block hamburger md:hidden focus:outline-none" aria-label="Toggle menu">
                     <span class="hamburger-top"></span>
                     <span class="hamburger-middle"></span>
                     <span class="hamburger-bottom"></span>
@@ -87,50 +87,57 @@
         <!-- Mobile Menu -->
         <div class="md:hidden">
             <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-2 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md rounded-xl">
-                <a href="#gallery" class="hover:text-primary">Gallery</a>
-                <a href="#amenities" class="hover:text-primary">Activities</a>
-                <a href="#location" class="hover:text-primary">Location</a>
-                <a href="#contact" class="bg-accent text-primary font-bold py-3 px-6 rounded-full shadow-md hover:bg-accent-dark transition duration-300">Inquire Now</a>
+                <a href="#gallery-section" class="hover:text-primary">Gallery</a>
+                <a href="#amenities-section" class="hover:text-primary">Activities</a>
+                <a href="#location-section" class="hover:text-primary">Location</a>
+                <a href="#contact-section" class="bg-accent text-primary font-bold py-3 px-6 rounded-full shadow-md hover:bg-accent-dark transition duration-300">Inquire Now</a>
             </div>
         </div>
     </header>
+
     <!-- CSS for Hamburger Menu Icon -->
     <style>
-        .hamburger { cursor: pointer; width: 24px; height: 24px; transition: all 0.25s; position: relative; }
-        .hamburger-top, .hamburger-middle, .hamburger-bottom { position: absolute; top: 0; left: 0; width: 24px; height: 3px; background: var(--primary); border-radius: 2px; transform: rotate(0); transition: all 0.5s; }
-        .hamburger-middle { transform: translateY(8px); }
-        .hamburger-bottom { transform: translateY(16px); }
-        .open { transform: rotate(90deg); transform: translateY(0px); }
-        .open .hamburger-top { transform: rotate(45deg) translateY(6px) translate(6px); }
-        .open .hamburger-middle { display: none; }
-        .open .hamburger-bottom { transform: rotate(-45deg) translateY(6px) translate(-6px); }
+        .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
+        .hamburger-top, .hamburger-middle, .hamburger-bottom {
+            position: absolute; left: 0; width: 24px; height: 3px; background: var(--primary); border-radius: 2px;
+            transition: all 0.5s ease;
+        }
+        .hamburger-top { top: 0; }
+        .hamburger-middle { top: 8px; }
+        .hamburger-bottom { top: 16px; }
+        .open .hamburger-top {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .open .hamburger-middle {
+            opacity: 0;
+        }
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
     </style>
-
 
     <!-- Main Content -->
     <main>
 
         <!-- Hero Section -->
         <section 
-  class="hero-bg min-h-[75vh] md:min-h-[85vh] flex items-center justify-center text-white text-center px-4 bg-cover bg-center bg-no-repeat relative"
-  style="background-image: url('./2025-07-17.webp');"
->
-  <!-- Optional overlay for better text readability -->
-  <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+          class="hero-bg min-h-[75vh] md:min-h-[85vh] flex items-center justify-center text-white text-center px-4 bg-cover bg-center bg-no-repeat relative"
+          style="background-image: url('./2025-07-17.webp');"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
-  <div class="relative z-10" data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
-      Your Private Countryside Escape
-    </h1>
-    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md">
-      The perfect destination for private parties, events, and nature getaways near Pune.
-    </p>
-    <a href="#contact" class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">
-      Book Your Stay
-    </a>
-  </div>
-</section>
-
+          <div class="relative z-10" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+              Your Private Countryside Escape
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md">
+              The perfect destination for private parties, events, and nature getaways near Pune.
+            </p>
+            <a href="#contact-section" class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">
+              Book Your Stay
+            </a>
+          </div>
+        </section>
 
         <!-- Introduction & Key Features -->
         <section class="py-20 md:py-32 bg-white">
@@ -141,18 +148,18 @@
                         <p class="text-gray-600 mb-8 leading-relaxed">
                             Nestled in a serene landscape, 7 Green field Villa offers the perfect escape from the city's hustle. Our spacious villa is designed for families, friends, and groups looking to host memorable events or simply unwind in nature's lap. Enjoy complete privacy for an unforgettable retreat.
                         </p>
-                        <a href="#amenities" class="text-accent font-bold hover:underline">Explore Activities &rarr;</a>
+                        <a href="#amenities-section" class="text-accent font-bold hover:underline">Explore Activities &rarr;</a>
                     </div>
                     <div class="relative" data-aos="fade-left">
                         <div class="absolute -top-4 -left-4 w-full h-full bg-primary rounded-2xl transform -rotate-3 opacity-80"></div>
-                        <img src=".\Front view.png" alt="Villa at Dusk" class="relative w-full h-full object-cover rounded-2xl shadow-2xl">
+                        <img src="./Front view.png" alt="Villa at Dusk" class="relative w-full h-full object-cover rounded-2xl shadow-2xl" />
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Photo Gallery -->
-        <section id="gallery" class="py-20 md:py-32">
+        <section id="gallery-section" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Explore the Vibe</h2>
@@ -160,27 +167,27 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\IMG20230610202116.jpg" alt="Villa Front View"></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\2024-11-11.webp" alt="Villa Side Angle"></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./IMG20230610202116.jpg" alt="Villa Front View" /></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2024-11-11.webp" alt="Villa Side Angle" /></div>
                     </div>
                     <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\2025-06-30.webp" alt="Villa Exterior Night"></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\2024-01-19.webp" alt="Villa Gate Night"></div>
-                    </div>
-                     <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\HAll.webp" alt="Villa with Balcony"></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\2023-07-26.webp" alt="Villa Corner View"></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2025-06-30.webp" alt="Villa Exterior Night" /></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2024-01-19.webp" alt="Villa Gate Night" /></div>
                     </div>
                     <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\IMG20231224225220.jpg" alt="Villa at Sunset"></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src=".\2025-07-17.webp" alt="Villa Driveway"></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./HAll.webp" alt="Villa with Balcony" /></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2023-07-26.webp" alt="Villa Corner View" /></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./IMG20231224225220.jpg" alt="Villa at Sunset" /></div>
+                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2025-07-17.webp" alt="Villa Driveway" /></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Amenities & Activities Section -->
-        <section id="amenities" class="py-20 md:py-32 bg-white">
+        <section id="amenities-section" class="py-20 md:py-32 bg-white">
             <div class="container mx-auto px-6">
                  <div class="text-center" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Your Experience, Your Way</h2>
@@ -189,32 +196,44 @@
                 <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
                     <!-- Amenity Item -->
                     <div class="flex flex-col items-center" data-aos="fade-up">
-                        <div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.975M15 21H9" /></svg></div>
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.975M15 21H9" /></svg>
+                        </div>
                         <span class="font-semibold text-lg">Parties & Events</span>
                         <span class="text-sm text-gray-500">Host memorable functions</span>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z" /></svg></div>
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z" /></svg>
+                        </div>
                         <span class="font-semibold text-lg">BBQ & Bonfire</span>
                         <span class="text-sm text-gray-500">For cozy evenings</span>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg></div>
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                        </div>
                         <span class="font-semibold text-lg">Forest Trekking</span>
                         <span class="text-sm text-gray-500">Explore nearby trails</span>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
-                        <div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div>
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </div>
                         <span class="font-semibold text-lg">Pet Friendly</span>
                         <span class="text-sm text-gray-500">Bring your furry friends</span>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
-                        <div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
                         <span class="font-semibold text-lg">Power Backup</span>
                          <span class="text-sm text-gray-500">Uninterrupted fun</span>
                     </div>
                     <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
-                        <div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
                         <span class="font-semibold text-lg">Smart TV</span>
                         <span class="text-sm text-gray-500">For entertainment</span>
                     </div>
@@ -223,15 +242,15 @@
         </section>
 
         <!-- Location Section -->
-        <section id="location" class="py-20 md:py-32">
+        <section id="location-section" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
                     <div class="order-2 md:order-1" data-aos="fade-right">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Find Your Way to Serenity</h2>
                         <p class="mb-2 font-semibold text-gray-700">Address:</p>
                         <p class="text-gray-600 mb-8">
-                            7 Green field Villa, Plot No.7, SVB Future city, <br>
-                            Kapurhole Junction near Khed shivapur, Kikvi, <br>
+                            7 Green field Villa, Plot No.7, SVB Future city, <br />
+                            Kapurhole Junction near Khed shivapur, Kikvi, <br />
                             Wagajwadi, Bhor, Pune, Maharashtra 412205
                         </p>
                         <a href="https://www.google.com/maps/search/?api=1&query=7+Greenfield+Villa,+Kikvi,+Maharashtra" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-primary-dark transition duration-300">
@@ -250,7 +269,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32 bg-primary/5">
+        <section id="contact-section" class="py-20 md:py-32 bg-primary/5">
             <div class="container mx-auto px-6 text-center" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Your Getaway?</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto mb-8">
@@ -280,7 +299,7 @@
         // Initialize Animate on Scroll
         AOS.init({
             duration: 800, // animation duration
-            once: true, // whether animation should happen only once - while scrolling down
+            once: true,    // whether animation should happen only once - while scrolling down
         });
 
         // Mobile Menu Toggle
