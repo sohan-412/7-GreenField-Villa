@@ -23,13 +23,15 @@
       gtag('config', 'AW-17405027649');
     </script>
     <style>
+        /* New, modern color palette: Forest & Marigold */
         :root {
-            --background: #F8F7F5;
-            --text-primary: #333333;
-            --primary: #224229;
-            --accent: #EAAA00;
+            --background: #F8F7F5;      /* Soft, warm off-white */
+            --text-primary: #333333;    /* Soft, dark charcoal */
+            --primary: #224229;         /* Deep, rich forest green */
+            --accent: #EAAA00;          /* Vibrant, warm marigold yellow */
             --white: #FFFFFF;
         }
+
         body {
             font-family: 'Lato', sans-serif;
             background-color: var(--background);
@@ -41,28 +43,19 @@
             font-weight: 600;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./2025-07-17.webp');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x1080/224229/FFFFFF?text=Villa+at+Night');
             background-size: cover;
             background-position: center;
         }
+        
+        /* Custom classes for the new color scheme */
         .bg-primary { background-color: var(--primary); }
         .bg-accent { background-color: var(--accent); }
         .text-primary { color: var(--primary); }
         .text-accent { color: var(--accent); }
-        .hover\:bg-accent-dark:hover { background-color: #D49A00; }
+        .hover\:bg-accent-dark:hover { background-color: #D49A00; } /* A darker marigold for hover */
         .hover\:text-primary:hover { color: var(--primary); }
         .hover\:bg-primary-dark:hover { background-color: #1b3521; }
-        .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
-        .hamburger-top, .hamburger-middle, .hamburger-bottom {
-            position: absolute; left: 0; width: 24px; height: 3px; background: var(--primary); border-radius: 2px;
-            transition: all 0.5s ease;
-        }
-        .hamburger-top { top: 0; }
-        .hamburger-middle { top: 8px; }
-        .hamburger-bottom { top: 16px; }
-        .open .hamburger-top { transform: rotate(45deg) translate(5px, 5px); }
-        .open .hamburger-middle { opacity: 0; }
-        .open .hamburger-bottom { transform: rotate(-45deg) translate(5px, -5px); }
     </style>
 </head>
 <body class="antialiased">
@@ -73,12 +66,16 @@
                 <span class="text-accent">7</span>
                 <span class="text-primary">GreenField Villa</span>
             </a>
+            
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#gallery" class="text-gray-600 hover:text-primary transition duration-300">Gallery</a>
-                <a href="#amenities" class="text-gray-600 hover:text-primary transition duration-300">Activities</a>
-                <a href="#location" class="text-gray-600 hover:text-primary transition duration-300">Location</a>
-                <a href="#contact" class="bg-accent text-primary font-bold py-2 px-6 rounded-full shadow-md hover:bg-accent-dark hover:scale-105 transform transition duration-300">Inquire Now</a>
+                <a href="#gallery-section" class="text-gray-600 hover:text-primary transition duration-300">Gallery</a>
+                <a href="#amenities-section" class="text-gray-600 hover:text-primary transition duration-300">Activities</a>
+                <a href="#location-section" class="text-gray-600 hover:text-primary transition duration-300">Location</a>
+                <a href="#contact-section" class="bg-accent text-primary font-bold py-2 px-6 rounded-full shadow-md hover:bg-accent-dark hover:scale-105 transform transition duration-300">
+                    Inquire Now
+                </a>
             </div>
+
             <div class="md:hidden">
                 <button id="menu-btn" class="block hamburger md:hidden focus:outline-none" aria-label="Toggle menu">
                     <span class="hamburger-top"></span>
@@ -89,22 +86,53 @@
         </nav>
         <div class="md:hidden">
             <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-2 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md rounded-xl">
-                <a href="#gallery" class="hover:text-primary">Gallery</a>
-                <a href="#amenities" class="hover:text-primary">Activities</a>
-                <a href="#location" class="hover:text-primary">Location</a>
-                <a href="#contact" class="bg-accent text-primary font-bold py-3 px-6 rounded-full shadow-md hover:bg-accent-dark transition duration-300">Inquire Now</a>
+                <a href="#gallery-section" class="hover:text-primary">Gallery</a>
+                <a href="#amenities-section" class="hover:text-primary">Activities</a>
+                <a href="#location-section" class="hover:text-primary">Location</a>
+                <a href="#contact-section" class="bg-accent text-primary font-bold py-3 px-6 rounded-full shadow-md hover:bg-accent-dark transition duration-300">Inquire Now</a>
             </div>
         </div>
     </header>
 
+    <style>
+        .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
+        .hamburger-top, .hamburger-middle, .hamburger-bottom {
+            position: absolute; left: 0; width: 24px; height: 3px; background: var(--primary); border-radius: 2px;
+            transition: all 0.5s ease;
+        }
+        .hamburger-top { top: 0; }
+        .hamburger-middle { top: 8px; }
+        .hamburger-bottom { top: 16px; }
+        .open .hamburger-top {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .open .hamburger-middle {
+            opacity: 0;
+        }
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+
     <main>
-        <section class="hero-bg min-h-[75vh] md:min-h-[85vh] flex items-center justify-center text-white text-center px-4 bg-cover bg-center bg-no-repeat relative" style="background-image: url('./2025-07-17.webp');">
-            <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
-            <div class="relative z-10" data-aos="fade-up">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">Your Private Countryside Escape</h1>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md">The perfect destination for private parties, events, and nature getaways near Pune.</p>
-                <a href="#contact" class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">Book Your Stay</a>
-            </div>
+
+        <section 
+          class="hero-bg min-h-[75vh] md:min-h-[85vh] flex items-center justify-center text-white text-center px-4 bg-cover bg-center bg-no-repeat relative"
+          style="background-image: url('./2025-07-17.webp');"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+
+          <div class="relative z-10" data-aos="fade-up">
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+                  Your Private Countryside Escape
+              </h1>
+              <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md">
+                  The perfect destination for private parties, events, and nature getaways near Pune.
+              </p>
+              <a href="#contact-section" class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">
+                  Book Your Stay
+              </a>
+          </div>
         </section>
 
         <section class="py-20 md:py-32 bg-white">
@@ -112,8 +140,10 @@
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
                     <div data-aos="fade-right">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6">Celebrate & Unwind in Nature.</h2>
-                        <p class="text-gray-600 mb-8 leading-relaxed">Nestled in a serene landscape, 7 Green field Villa offers the perfect escape from the city's hustle. Our spacious villa is designed for families, friends, and groups looking to host memorable events or simply unwind in nature's lap. Enjoy complete privacy for an unforgettable retreat.</p>
-                        <a href="#amenities" class="text-accent font-bold hover:underline">Explore Activities →</a>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Nestled in a serene landscape, 7 Green field Villa offers the perfect escape from the city's hustle. Our spacious villa is designed for families, friends, and groups looking to host memorable events or simply unwind in nature's lap. Enjoy complete privacy for an unforgettable retreat.
+                        </p>
+                        <a href="#amenities-section" class="text-accent font-bold hover:underline">Explore Activities →</a>
                     </div>
                     <div class="relative" data-aos="fade-left">
                         <div class="absolute -top-4 -left-4 w-full h-full bg-primary rounded-2xl transform -rotate-3 opacity-80"></div>
@@ -123,7 +153,7 @@
             </div>
         </section>
 
-        <section id="gallery" class="py-20 md:py-32">
+        <section id="gallery-section" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Explore the Vibe</h2>
@@ -150,46 +180,99 @@
             </div>
         </section>
 
-        <section id="amenities" class="py-20 md:py-32 bg-white">
+        <section id="amenities-section" class="py-20 md:py-32 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center" data-aos="fade-up">
+                 <div class="text-center" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Your Experience, Your Way</h2>
                     <p class="max-w-2xl mx-auto text-gray-500 mb-12">Everything you need for the perfect getaway is right here. From adventure to relaxation, craft your ideal stay.</p>
                 </div>
                 <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
-                    <div class="flex flex-col items-center" data-aos="fade-up"><div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.975M15 21H9" /></svg></div><span class="font-semibold text-lg">Parties & Events</span><span class="text-sm text-gray-500">Host memorable functions</span></div>
-                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100"><div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z" /></svg></div><span class="font-semibold text-lg">BBQ & Bonfire</span><span class="text-sm text-gray-500">For cozy evenings</span></div>
-                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200"><div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg></div><span class="font-semibold text-lg">Forest Trekking</span><span class="text-sm text-gray-500">Explore nearby trails</span></div>
-                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"><div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg></div><span class="font-semibold text-lg">Pet Friendly</span><span class="text-sm text-gray-500">Bring your furry friends</span></div>
-                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400"><div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div><span class="font-semibold text-lg">Power Backup</span><span class="text-sm text-gray-500">Uninterrupted fun</span></div>
-                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="500"><div class="bg-primary/10 rounded-2xl p-5 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div><span class="font-semibold text-lg">Smart TV</span><span class="text-sm text-gray-500">For entertainment</span></div>
+                    <div class="flex flex-col items-center" data-aos="fade-up">
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.975M15 21H9" /></svg>
+                        </div>
+                        <span class="font-semibold text-lg">Parties & Events</span>
+                        <span class="text-sm text-gray-500">Host memorable functions</span>
+                    </div>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.657 7.343A8 8 0 0117.657 18.657z" /></svg>
+                        </div>
+                        <span class="font-semibold text-lg">BBQ & Bonfire</span>
+                        <span class="text-sm text-gray-500">For cozy evenings</span>
+                    </div>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                        </div>
+                        <span class="font-semibold text-lg">Forest Trekking</span>
+                        <span class="text-sm text-gray-500">Explore nearby trails</span>
+                    </div>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </div>
+                        <span class="font-semibold text-lg">Pet Friendly</span>
+                        <span class="text-sm text-gray-500">Bring your furry friends</span>
+                    </div>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <span class="font-semibold text-lg">Power Backup</span>
+                         <span class="text-sm text-gray-500">Uninterrupted fun</span>
+                    </div>
+                    <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
+                        <div class="bg-primary/10 rounded-2xl p-5 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
+                        <span class="font-semibold text-lg">Smart TV</span>
+                        <span class="text-sm text-gray-500">For entertainment</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="location" class="py-20 md:py-32">
+        <section id="location-section" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
                     <div class="order-2 md:order-1" data-aos="fade-right">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Find Your Way to Serenity</h2>
                         <p class="mb-2 font-semibold text-gray-700">Address:</p>
-                        <p class="text-gray-600 mb-8">7 Green field Villa, Plot No.7, SVB Future city, <br /> Kapurhole Junction near Khed shivapur, Kikvi, <br /> Wagajwadi, Bhor, Pune, Maharashtra 412205</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=7+Greenfield+Villa,+Kikvi,+Maharashtra" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-primary-dark transition duration-300">Get Directions</a>
+                        <p class="text-gray-600 mb-8">
+                            7 Green field Villa, Plot No.7, SVB Future city, <br />
+                            Kapurhole Junction near Khed shivapur, Kikvi, <br />
+                            Wagajwadi, Bhor, Pune, Maharashtra 412205
+                        </p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=7+Greenfield+Villa,+Kikvi,+Maharashtra" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-primary-dark transition duration-300">
+                            Get Directions
+                        </a>
                     </div>
                     <div class="order-1 md:order-2 h-96 md:h-full w-full rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-left">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.999187310064!2d73.95856267588147!3d18.16495888286236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2f5080811a82d%3A0x15a31a5b8390b4d4!2s7%20Greenfield%20Villa!5e0!3m2!1sen!2sin!4v1721291849123!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.999187310064!2d73.95856267588147!3d18.16495888286236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2f5080811a82d%3A0x15a31a5b8390b4d4!2s7%20Greenfield%20Villa!5e0!3m2!1sen!2sin!4v1721291849123!5m2!1sen!2sin" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-32 bg-primary/5">
+        <section id="contact-section" class="py-20 md:py-32 bg-primary/5">
             <div class="container mx-auto px-6 text-center" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Your Getaway?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-8">Contact us directly for the best rates and availability. For the fastest response, chat with us on WhatsApp!</p>
-                <a href="https://wa.me/919881091425?text=Hi!%20I'm%20interested%20in%20booking%207%20Green%20field%20Villa.%20Please%20let%20me%20know%20the%20availability." target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105"
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                    Contact us directly for the best rates and availability. For the fastest response, chat with us on WhatsApp!
+                </p>
+                <a href="https://wa.me/919881091425?text=Hi!%20I'm%20interested%20in%20booking%207%20Green%20field%20Villa.%20Please%20let%20me%20know%20the%20availability." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="inline-flex items-center bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105"
                    onclick="trackContactConversion();">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="mr-3 text-primary" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="mr-3 text-primary" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
                     Chat on WhatsApp
                 </a>
                 <p class="text-gray-500 mt-6">Or call us at: <a href="tel:+919881091425" class="text-primary font-semibold hover:underline" onclick="trackContactConversion();">+91-98810-91425</a></p>
