@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>7 Green field Villa - Luxurious Countryside Homestay Near Pune</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Animate On Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Custom Styles & Font Configuration -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17405027649"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17405027649');
+    </script>
     <style>
         /* New, modern color palette: Forest & Marigold */
         :root {
@@ -56,16 +60,13 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <!-- Text Logo -->
             <a href="#" class="text-2xl font-bold">
                 <span class="text-accent">7</span>
                 <span class="text-primary">GreenField Villa</span>
             </a>
             
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#gallery-section" class="text-gray-600 hover:text-primary transition duration-300">Gallery</a>
                 <a href="#amenities-section" class="text-gray-600 hover:text-primary transition duration-300">Activities</a>
@@ -75,7 +76,6 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="menu-btn" class="block hamburger md:hidden focus:outline-none" aria-label="Toggle menu">
                     <span class="hamburger-top"></span>
@@ -84,7 +84,6 @@
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
         <div class="md:hidden">
             <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-2 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md rounded-xl">
                 <a href="#gallery-section" class="hover:text-primary">Gallery</a>
@@ -95,7 +94,6 @@
         </div>
     </header>
 
-    <!-- CSS for Hamburger Menu Icon -->
     <style>
         .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
         .hamburger-top, .hamburger-middle, .hamburger-bottom {
@@ -116,10 +114,8 @@
         }
     </style>
 
-    <!-- Main Content -->
     <main>
 
-        <!-- Hero Section -->
         <section 
           class="hero-bg min-h-[75vh] md:min-h-[85vh] flex items-center justify-center text-white text-center px-4 bg-cover bg-center bg-no-repeat relative"
           style="background-image: url('./2025-07-17.webp');"
@@ -127,19 +123,18 @@
           <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
           <div class="relative z-10" data-aos="fade-up">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
-              Your Private Countryside Escape
-            </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md">
-              The perfect destination for private parties, events, and nature getaways near Pune.
-            </p>
-            <a href="#contact-section" class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">
-              Book Your Stay
-            </a>
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+                  Your Private Countryside Escape
+              </h1>
+              <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto drop-shadow-md">
+                  The perfect destination for private parties, events, and nature getaways near Pune.
+              </p>
+              <a href="#contact-section" class="bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">
+                  Book Your Stay
+              </a>
           </div>
         </section>
 
-        <!-- Introduction & Key Features -->
         <section class="py-20 md:py-32 bg-white">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -148,7 +143,7 @@
                         <p class="text-gray-600 mb-8 leading-relaxed">
                             Nestled in a serene landscape, 7 Green field Villa offers the perfect escape from the city's hustle. Our spacious villa is designed for families, friends, and groups looking to host memorable events or simply unwind in nature's lap. Enjoy complete privacy for an unforgettable retreat.
                         </p>
-                        <a href="#amenities-section" class="text-accent font-bold hover:underline">Explore Activities &rarr;</a>
+                        <a href="#amenities-section" class="text-accent font-bold hover:underline">Explore Activities →</a>
                     </div>
                     <div class="relative" data-aos="fade-left">
                         <div class="absolute -top-4 -left-4 w-full h-full bg-primary rounded-2xl transform -rotate-3 opacity-80"></div>
@@ -158,7 +153,6 @@
             </div>
         </section>
 
-        <!-- Photo Gallery -->
         <section id="gallery-section" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center" data-aos="fade-up">
@@ -186,7 +180,6 @@
             </div>
         </section>
 
-        <!-- Amenities & Activities Section -->
         <section id="amenities-section" class="py-20 md:py-32 bg-white">
             <div class="container mx-auto px-6">
                  <div class="text-center" data-aos="fade-up">
@@ -194,7 +187,6 @@
                     <p class="max-w-2xl mx-auto text-gray-500 mb-12">Everything you need for the perfect getaway is right here. From adventure to relaxation, craft your ideal stay.</p>
                 </div>
                 <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
-                    <!-- Amenity Item -->
                     <div class="flex flex-col items-center" data-aos="fade-up">
                         <div class="bg-primary/10 rounded-2xl p-5 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.975M15 21H9" /></svg>
@@ -241,7 +233,6 @@
             </div>
         </section>
 
-        <!-- Location Section -->
         <section id="location-section" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -268,34 +259,41 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact-section" class="py-20 md:py-32 bg-primary/5">
             <div class="container mx-auto px-6 text-center" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Your Getaway?</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto mb-8">
                     Contact us directly for the best rates and availability. For the fastest response, chat with us on WhatsApp!
                 </p>
-                <a href="https://wa.me/919881091425?text=Hi!%20I'm%20interested%20in%20booking%207%20Green%20field%20Villa.%20Please%20let%20me%20know%20the%20availability." target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105">
+                <a href="https://wa.me/919881091425?text=Hi!%20I'm%20interested%20in%20booking%207%20Green%20field%20Villa.%20Please%20let%20me%20know%20the%20availability." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="inline-flex items-center bg-accent text-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-accent-dark transition duration-300 transform hover:scale-105"
+                   onclick="trackContactConversion();">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="mr-3 text-primary" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                     </svg>
                     Chat on WhatsApp
                 </a>
-                <p class="text-gray-500 mt-6">Or call us at: <a href="tel:+919881091425" class="text-primary font-semibold hover:underline">+91-98810-91425</a></p>
+                <p class="text-gray-500 mt-6">Or call us at: <a href="tel:+919881091425" class="text-primary font-semibold hover:underline" onclick="trackContactConversion();">+91-98810-91425</a></p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-primary text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p class="font-semibold text-lg mb-2">7 Green field Villa, Pune</p>
-            <p class="text-gray-300">&copy; 2025 7 Green field Villa. All Rights Reserved.</p>
+            <p class="text-gray-300">© 2025 7 Green field Villa. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu and Animations -->
     <script>
+        // Function to fire the Google Ads conversion event.
+        function trackContactConversion() {
+          gtag('event', 'conversion', {'send_to': 'AW-17405027649/C55cCLnMtv0aEMHKrutA'});
+          return true;
+        }
+
         // Initialize Animate on Scroll
         AOS.init({
             duration: 800, // animation duration
