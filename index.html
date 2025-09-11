@@ -28,15 +28,20 @@
 
     <!-- Animate On Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- SwiperJS CSS (for interactive slider) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- lightGallery CSS (for interactive gallery) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
 
     <!-- Custom Styles & Font Configuration -->
     <style>
         :root {
-            --background: #F8F7F5;      /* Soft, warm off-white */
-            --text-primary: #333333;    /* Soft, dark charcoal */
-            --primary: #224229;        /* Deep, rich forest green */
-            --accent: #EAAA00;          /* Vibrant, warm marigold yellow */
+            --background: #F8F7F5;
+            --text-primary: #333333;
+            --primary: #224229;
+            --accent: #EAAA00;
             --white: #FFFFFF;
         }
         body { font-family: 'Lato', sans-serif; background-color: var(--background); color: var(--text-primary); }
@@ -49,7 +54,10 @@
         .hover\:bg-accent-dark:hover { background-color: #D49A00; }
         .hover\:text-primary:hover { color: var(--primary); }
         .hover\:bg-primary-dark:hover { background-color: #1b3521; }
-        .star-gold { color: #FFD700; }
+        
+        /* Custom Swiper Styles */
+        .swiper-button-next, .swiper-button-prev { color: var(--primary) !important; }
+        .swiper-pagination-bullet-active { background-color: var(--primary) !important; }
     </style>
     
     <!-- JSON-LD Structured Data for SEO -->
@@ -151,7 +159,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- A Perfect Venue Section -->
         <section id="venue-section" class="py-20 md:py-32 bg-primary/5">
             <div class="container mx-auto px-6">
@@ -189,25 +197,17 @@
             <div class="container mx-auto px-6">
                 <div class="text-center" data-aos="fade-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Explore the Vibe</h2>
-                    <p class="max-w-2xl mx-auto text-gray-500 mb-12">Get a glimpse of the memories waiting to be made at 7 Green field Villa.</p>
+                    <p class="max-w-2xl mx-auto text-gray-500 mb-12">Click on any image to open the interactive gallery and see more.</p>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./IMG20230610202116.jpg" alt="Villa front view at night with lights on" /></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2024-11-11.webp" alt="Side angle of the villa property" /></div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2025-06-30.webp" alt="Villa exterior shot with garden" /></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2024-01-19.webp" alt="Entrance gate of the villa at night" /></div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./HAll.webp" alt="Spacious hall inside the villa" /></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2023-07-26.webp" alt="Corner view of the villa exterior" /></div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./IMG20231224225220.jpg" alt="Villa decorated for a Christmas celebration" /></div>
-                        <div><img class="h-auto max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300" src="./2025-07-17.webp" alt="Scenic view from the villa driveway at sunset" /></div>
-                    </div>
+                <div id="lightgallery" class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./IMG20230610202116.jpg" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./IMG20230610202116.jpg" alt="Villa front view at night with lights on" /></a>
+                    <a href="./2024-11-11.webp" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./2024-11-11.webp" alt="Side angle of the villa property" /></a>
+                    <a href="./2025-06-30.webp" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./2025-06-30.webp" alt="Villa exterior shot with garden" /></a>
+                    <a href="./2024-01-19.webp" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./2024-01-19.webp" alt="Entrance gate of the villa at night" /></a>
+                    <a href="./HAll.webp" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./HAll.webp" alt="Spacious hall inside the villa" /></a>
+                    <a href="./2023-07-26.webp" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./2023-07-26.webp" alt="Corner view of the villa exterior" /></a>
+                    <a href="./IMG20231224225220.jpg" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./IMG20231224225220.jpg" alt="Villa decorated for a Christmas celebration" /></a>
+                    <a href="./2025-07-17.webp" class="overflow-hidden rounded-2xl shadow-lg group"><img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" src="./2025-07-17.webp" alt="Scenic view from the villa driveway at sunset" /></a>
                 </div>
             </div>
         </section>
@@ -237,64 +237,41 @@
                     <p class="max-w-2xl mx-auto text-gray-500 mb-12">Your stay at 7 Green field Villa places you near some of the region's most beloved spots.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
-                        <img src="https://images.unsplash.com/photo-1623753066532-5226c1170784?q=80&w=1925&auto=format&fit=crop" alt="Scenic view of Bhatghar Dam" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                           <h3 class="font-semibold text-xl mb-2">Bhatghar Dam</h3>
-                           <p class="text-gray-600 mb-4">A scenic spot perfect for picnics and enjoying serene water views. Truly a photographer's delight.</p>
-                           <span class="font-bold text-primary">~ 30 Mins Drive</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://images.unsplash.com/photo-1629283124974-5a21e7d377b2?q=80&w=2070&auto=format&fit=crop" alt="Breathtaking U-bend of a river at Necklace Point" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                           <h3 class="font-semibold text-xl mb-2">Necklace Point</h3>
-                           <p class="text-gray-600 mb-4">Witness the breathtaking U-bend of the river, resembling a beautiful necklace from this viewpoint.</p>
-                           <span class="font-bold text-primary">~ 45 Mins Drive</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://images.unsplash.com/photo-1601783236357-935f11598f80?q=80&w=2070&auto=format&fit=crop" alt="Historic Sinhagad Fort on a hilltop" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                           <h3 class="font-semibold text-xl mb-2">Sinhagad Fort</h3>
-                           <p class="text-gray-600 mb-4">A historic hill fortress offering panoramic views, trekking opportunities, and a glimpse into Maratha history. Don't miss trying the traditional local snacks available at the top.</p>
-                           <span class="font-bold text-primary">~ 1 Hour Drive</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://images.unsplash.com/photo-1593817750953-83a86348a4a4?q=80&w=1932&auto=format&fit=crop" alt="Lush green valleys of Mahabaleshwar hill station" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                           <h3 class="font-semibold text-xl mb-2">Mahabaleshwar</h3>
-                           <p class="text-gray-600 mb-4">Famous for its stunning viewpoints, lush strawberry farms, and beautiful lakes. A perfect hill station day trip.</p>
-                           <span class="font-bold text-primary">~ 2.5 Hours Drive</span>
-                        </div>
-                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1623753066532-5226c1170784?q=80&w=1925&auto=format&fit=crop" alt="Scenic view of Bhatghar Dam" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-semibold text-xl mb-2">Bhatghar Dam</h3><p class="text-gray-600 mb-4">A scenic spot perfect for picnics and enjoying serene water views. Truly a photographer's delight.</p><span class="font-bold text-primary">~ 30 Mins Drive</span></div></div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1629283124974-5a21e7d377b2?q=80&w=2070&auto=format&fit=crop" alt="Breathtaking U-bend of a river at Necklace Point" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-semibold text-xl mb-2">Necklace Point</h3><p class="text-gray-600 mb-4">Witness the breathtaking U-bend of the river, resembling a beautiful necklace from this viewpoint.</p><span class="font-bold text-primary">~ 45 Mins Drive</span></div></div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1601783236357-935f11598f80?q=80&w=2070&auto=format&fit=crop" alt="Historic Sinhagad Fort on a hilltop" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-semibold text-xl mb-2">Sinhagad Fort</h3><p class="text-gray-600 mb-4">A historic hill fortress offering panoramic views, trekking opportunities, and a glimpse into Maratha history. Don't miss trying the traditional local snacks available at the top.</p><span class="font-bold text-primary">~ 1 Hour Drive</span></div></div>
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1593817750953-83a86348a4a4?q=80&w=1932&auto=format&fit=crop" alt="Lush green valleys of Mahabaleshwar hill station" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-semibold text-xl mb-2">Mahabaleshwar</h3><p class="text-gray-600 mb-4">Famous for its stunning viewpoints, lush strawberry farms, and beautiful lakes. A perfect hill station day trip.</p><span class="font-bold text-primary">~ 2.5 Hours Drive</span></div></div>
                 </div>
             </div>
         </section>
 
         <!-- Guest Reviews Section -->
         <section id="reviews-section" class="py-20 md:py-32 bg-primary/5">
-            <div class="container mx-auto px-6">
-                <div class="text-center" data-aos="fade-up">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What Our Guests Say</h2>
                     <p class="max-w-2xl mx-auto text-gray-500 mb-12">We are proud to have hosted wonderful guests. Here's what they think about their stay.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-                        <div class="flex items-center mb-4">
-                            <span class="font-bold text-lg text-primary mr-2">Sagar Dhotre</span>
-                            <div class="flex text-accent">★★★★★</div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper pb-16">
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-lg">
+                            <div class="flex items-center mb-4"><span class="font-bold text-lg text-primary mr-2">Sagar Dhotre</span><div class="flex text-accent">★★★★★</div></div>
+                            <p class="text-gray-600 italic">"Best place for family and friends. It's a proper staycation for relaxing and chilling. It's a huge property with a lawn. The food is also awesome. A must-visit place."</p>
                         </div>
-                        <p class="text-gray-600 italic">"Best place for family and friends. It's a proper staycation for relaxing and chilling. It's a huge property with a lawn. The food is also awesome. A must-visit place."</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-center mb-4">
-                            <span class="font-bold text-lg text-primary mr-2">Ganesh Ghadage</span>
-                            <div class="flex text-accent">★★★★★</div>
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-lg">
+                            <div class="flex items-center mb-4"><span class="font-bold text-lg text-primary mr-2">Ganesh Ghadage</span><div class="flex text-accent">★★★★★</div></div>
+                            <p class="text-gray-600 italic">"A very nice place to hangout with friends and family... a peaceful place to spend your weekends... loved it."</p>
                         </div>
-                        <p class="text-gray-600 italic">"A very nice place to hangout with friends and family... a peaceful place to spend your weekends... loved it."</p>
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-lg">
+                             <div class="flex items-center mb-4"><span class="font-bold text-lg text-primary mr-2">Rahul Sonawane</span><div class="flex text-accent">★★★★★</div></div>
+                             <p class="text-gray-600 italic">"The place is amazing for a get together with friends or family.. the villa is beautiful and the surrounding area is peaceful.. the food provided by them was delicious.. the owner is also very co operative.. a must visit..!!"</p>
+                        </div>
+                         <div class="swiper-slide bg-white p-8 rounded-2xl shadow-lg">
+                             <div class="flex items-center mb-4"><span class="font-bold text-lg text-primary mr-2">Snehal Shewale</span><div class="flex text-accent">★★★★★</div></div>
+                             <p class="text-gray-600 italic">"Amazing place for family n frnds get together.. Peaceful n relaxing stay.. Must visit place.."</p>
+                        </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
@@ -334,18 +311,51 @@
             <p class="text-gray-300">© 2025 7 Green field Villa. All Rights Reserved.</p>
         </div>
     </footer>
+    
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
 
+    <!-- Initialization Scripts -->
     <script>
+        // Google Ads Conversion Tracking
         function trackContactConversion() {
           gtag('event', 'conversion', {'send_to': 'AW-17405027649/C55cCLnMtv0aEMHKrutA'});
           return true;
         }
 
+        // Initialize Animate on Scroll
         AOS.init({
             duration: 800,
             once: true,
         });
 
+        // Initialize lightGallery
+        lightGallery(document.getElementById('lightgallery'));
+
+        // Initialize Swiper for Reviews
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+          },
+        });
+
+        // Mobile Menu Toggle
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
         btn.addEventListener('click', () => {
